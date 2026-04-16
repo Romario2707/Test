@@ -1,10 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Meine erste Website</title>
+  <title>Meine Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+    }
+
+    .sidebar a {
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+    }
+
+    .sidebar a:hover {
+      background-color: #575757;
+    }
+
+    /* Button */
+    .open-btn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #111;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+    }
+
+    /* Content */
+    #main {
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
+
+<!-- Button -->
+<button class="open-btn" onclick="toggleMenu()">☰ Menü</button>
+
+<!-- Sidebar -->
+<div id="mySidebar" class="sidebar">
+  <a href="#">Test 1</a>
+  <a href="#">Test 2</a>
+  <a href="#">Test 3</a>
+</div>
+
+<!-- Content -->
+<div id="main">
   <h1>Willkommen!</h1>
-  <p>Das ist meine erste Website 🚀</p>
+  <p>Deine Website startet hier.</p>
+</div>
+
+<script>
+  let isOpen = false;
+
+  function toggleMenu() {
+    const sidebar = document.getElementById("mySidebar");
+    if (isOpen) {
+      sidebar.style.width = "0";
+    } else {
+      sidebar.style.width = "200px";
+    }
+    isOpen = !isOpen;
+  }
+</script>
+
 </body>
 </html>
