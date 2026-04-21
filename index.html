@@ -1,86 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-  <title>Meine Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hand in Hand Stories</title>
+
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background-color: #f7f3ef;
+      color: #3e3e3e;
     }
 
-    /* Sidebar */
-    .sidebar {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-color: #111;
-      overflow-x: hidden;
-      transition: 0.3s;
-      padding-top: 60px;
+    /* Navigation */
+    header {
+      background-color: #ffffff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e5e0da;
     }
 
-    .sidebar a {
-      padding: 10px 20px;
+    nav a {
+      margin-left: 20px;
       text-decoration: none;
+      color: #6b5e57;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #b89b84;
+    }
+
+    /* Hero / Titelbereich */
+    .hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto;
       font-size: 18px;
-      color: white;
-      display: block;
+      line-height: 1.6;
     }
 
-    .sidebar a:hover {
-      background-color: #575757;
+    /* Über mich */
+    .about {
+      background-color: #ffffff;
+      padding: 60px 20px;
+      text-align: center;
     }
 
-    /* Button */
-    .open-btn {
-      font-size: 20px;
-      cursor: pointer;
-      background-color: #111;
-      color: white;
-      padding: 10px 15px;
-      border: none;
+    .about h2 {
+      margin-bottom: 20px;
     }
 
-    /* Content */
-    #main {
+    .about p {
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
       padding: 20px;
+      font-size: 14px;
+      background-color: #f0ebe6;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #6b5e57;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
+
 <body>
 
-<!-- Button -->
-<button class="open-btn" onclick="toggleMenu()">☰ Menü</button>
+  <!-- Navigation -->
+  <header>
+    <div><strong>Hand in Hand Stories</strong></div>
+    <nav>
+      <a href="#">Startseite</a>
+      <a href="#">Leistungsangebot</a>
+      <a href="#">Impressionen</a>
+      <a href="#">Kontakt</a>
+    </nav>
+  </header>
 
-<!-- Sidebar -->
-<div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" onclick="toggleMenu()">❌ Schließen</a>
-  <a href="Test1.html">Test 1</a>
-  <a href="#">Test 2</a>
-  <a href="#">Test 3</a>
-</div>
+  <!-- Hauptbereich -->
+  <section class="hero">
+    <h1>Hand in Hand Stories</h1>
+    <p>
+      Freie Traureden, die eure persönliche Geschichte erzählen – emotional, individuell und unvergesslich.
+    </p>
+  </section>
 
-<!-- Content -->
-<div id="main">
-  <h1>Willkommen!</h1>
-  <p>Deine Website startet hier.</p>
-</div>
+  <!-- Über mich -->
+  <section class="about">
+    <h2>Über mich</h2>
+    <p>
+      <!-- HIER KANNST DU DEINEN TEXT EINFÜGEN -->
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Hier schreibst du später etwas über dich, deinen Stil und deine Motivation als Trauredner/in.
+    </p>
+  </section>
 
-<script>
-  let isOpen = false;
-
-  function toggleMenu() {
-    const sidebar = document.getElementById("mySidebar");
-    if (isOpen) {
-      sidebar.style.width = "0";
-    } else {
-      sidebar.style.width = "200px";
-    }
-    isOpen = !isOpen;
-  }
-</script>
+  <!-- Footer -->
+  <footer>
+    <a href="#">Impressum</a> | 
+    <a href="#">Datenschutz</a>
+  </footer>
 
 </body>
 </html>
