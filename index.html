@@ -4,22 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hand in Hand Stories</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
- body {
-  margin: 0;
-  font-family: 'Open Sans', Arial, sans-serif;
-  background-color: #f7f3ef;
-  color: #3e3e3e;
-}
+    body {
+      margin: 0;
+      font-family: 'Open Sans', Arial, sans-serif;
+      background-color: #f7f3ef;
+      color: #3e3e3e;
+    }
 
-h1, h2 {
-  font-family: 'Playfair Display', serif;
-}
-    #impressum {
-  transition: all 0.3s ease;
-}
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+    }
 
     /* Navigation */
     header {
@@ -42,7 +40,7 @@ h1, h2 {
       color: #b89b84;
     }
 
-    /* Hero / Titelbereich */
+    /* Hero */
     .hero {
       text-align: center;
       padding: 100px 20px 60px;
@@ -61,7 +59,7 @@ h1, h2 {
       line-height: 1.6;
     }
 
-    /* Über mich */
+    /* About */
     .about {
       background-color: #ffffff;
       padding: 60px 20px;
@@ -91,10 +89,24 @@ h1, h2 {
       color: #6b5e57;
       text-decoration: none;
       margin: 0 10px;
+      cursor: pointer;
     }
 
     footer a:hover {
       text-decoration: underline;
+    }
+
+    /* Impressum (neu & sauber) */
+    #impressum {
+      display: none;
+      padding: 30px 20px;
+      background-color: #ffffff;
+      text-align: center;
+      border-top: 1px solid #e5e0da;
+    }
+
+    #impressum.show {
+      display: block;
     }
   </style>
 </head>
@@ -112,7 +124,7 @@ h1, h2 {
     </nav>
   </header>
 
-  <!-- Hauptbereich -->
+  <!-- Hero -->
   <section class="hero">
     <h1>Hand in Hand Stories</h1>
     <p>
@@ -120,38 +132,43 @@ h1, h2 {
     </p>
   </section>
 
-  <!-- Über mich -->
+  <!-- About -->
   <section class="about">
     <h2>Über mich</h2>
     <p>
-      <!-- HIER KANNST DU DEINEN TEXT EINFÜGEN -->
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
       Hier schreibst du später etwas über dich, deinen Stil und deine Motivation als Trauredner/in.
     </p>
   </section>
 
   <!-- Footer -->
- <footer>
-  <a href="#" onclick="toggleImpressum(); return false;">Impressum</a> | 
-  <a href="#">Datenschutz</a>
-</footer>
+  <footer>
+    <a onclick="toggleImpressum()">Impressum</a> |
+    <a href="#">Datenschutz</a>
+  </footer>
 
-<!-- Impressum Section (versteckt) -->
-<section id="impressum" style="display: none; padding: 20px; background-color: #ffffff; text-align: center;">
-  <p>Das Leben ist schön</p>
-  <p>Wir haben uns und das in</p>
-  <p>47249 Duisburg</p>
-</section>
-<script>
-  function toggleImpressum() {
-    const section = document.getElementById("impressum");
+  <!-- Impressum -->
+  <section id="impressum">
+    <p><strong>Impressum</strong></p>
+    <p>Das Leben ist schön</p>
+    <p>Wir haben uns und das in</p>
+    <p>47249 Duisburg</p>
+  </section>
 
-    if (section.style.display === "none") {
-      section.style.display = "block";
-    } else {
-      section.style.display = "none";
+  <!-- Script -->
+  <script>
+    function toggleImpressum() {
+      const impressum = document.getElementById("impressum");
+      const isOpen = impressum.classList.toggle("show");
+
+      if (isOpen) {
+        impressum.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
     }
-  }
-</script>
+  </script>
+
 </body>
 </html>
