@@ -17,6 +17,9 @@
 h1, h2 {
   font-family: 'Playfair Display', serif;
 }
+    #impressum {
+  transition: all 0.3s ease;
+}
 
     /* Navigation */
     header {
@@ -128,10 +131,27 @@ h1, h2 {
   </section>
 
   <!-- Footer -->
-  <footer>
-    <a href="#">Impressum</a> | 
-    <a href="#">Datenschutz</a>
-  </footer>
+ <footer>
+  <a href="#" onclick="toggleImpressum()">Impressum</a> | 
+  <a href="#">Datenschutz</a>
+</footer>
 
+<!-- Impressum Section (versteckt) -->
+<section id="impressum" style="display: none; padding: 20px; background-color: #ffffff; text-align: center;">
+  <p>Das Leben ist schön</p>
+  <p>Wir haben uns und das in</p>
+  <p>47249 Duisburg</p>
+</section>
+<script>
+  function toggleImpressum() {
+    const section = document.getElementById("impressum");
+
+    if (section.style.display === "none") {
+      section.style.display = "block";
+    } else {
+      section.style.display = "none";
+    }
+  }
+</script>
 </body>
 </html>
